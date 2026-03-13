@@ -20,11 +20,10 @@
     "entry_point": "ads_mcp/server.py",
     "mcp_config": {
       "command": "uv",
-      "args": ["run", "--directory", "${__dirname}", "google-ads-mcp"],
+      "args": ["run", "--directory", "${__dirname}", "python", "-m", "ads_mcp.server"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "${user_config.google_application_credentials}",
-        "GOOGLE_ADS_DEVELOPER_TOKEN": "${user_config.google_ads_developer_token}",
-        "GOOGLE_ADS_LOGIN_CUSTOMER_ID": "${user_config.google_ads_login_customer_id}"
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "${user_config.google_ads_developer_token}"
       }
     }
   },
