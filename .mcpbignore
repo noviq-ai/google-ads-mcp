@@ -1,0 +1,26 @@
+# テスト
+tests/
+noxfile.py
+
+# CI/CD
+.github/
+
+# 開発用ファイル
+.git/
+.gitignore
+.mcpbignore
+CONTRIBUTING.md
+CODEOWNERS
+MANIFEST.in
+
+# ドキュメント
+README.md
+
+# ビルド成果物
+*.mcpb
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.nox/

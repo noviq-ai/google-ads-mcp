@@ -1,0 +1,69 @@
+{
+  "manifest_version": "0.4",
+  "name": "google-ads-mcp",
+  "display_name": "Google Ads MCP Server",
+  "version": "0.0.1",
+  "description": "MCP server for Google Ads - search ad account data and list accessible customers",
+  "long_description": "Connect Claude to your Google Ads accounts. Run GAQL queries to search campaigns, ad groups, keywords, and performance data. List accessible customer accounts.",
+  "author": {
+    "name": "Google Ads Team"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googleads/google-ads-mcp.git"
+  },
+  "icon": "icon.png",
+  "homepage": "https://github.com/googleads/google-ads-mcp",
+  "support": "https://github.com/googleads/google-ads-mcp/issues",
+  "server": {
+    "type": "uv",
+    "entry_point": "ads_mcp/server.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "google-ads-mcp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${user_config.google_application_credentials}",
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "${user_config.google_ads_developer_token}",
+        "GOOGLE_ADS_LOGIN_CUSTOMER_ID": "${user_config.google_ads_login_customer_id}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "search",
+      "description": "Fetch data from the Google Ads API using GAQL queries - campaigns, ad groups, keywords, performance metrics"
+    },
+    {
+      "name": "list_accessible_customers",
+      "description": "List IDs of Google Ads customer accounts accessible by the authenticated user"
+    }
+  ],
+  "user_config": {
+    "google_application_credentials": {
+      "type": "file",
+      "title": "Google Application Credentials",
+      "description": "Path to your Google service account credentials JSON file",
+      "required": true
+    },
+    "google_ads_developer_token": {
+      "type": "string",
+      "title": "Google Ads Developer Token",
+      "description": "Your Google Ads API developer token",
+      "required": true
+    },
+    "google_ads_login_customer_id": {
+      "type": "string",
+      "title": "Login Customer ID",
+      "description": "Manager account customer ID (digits only, no hyphens) - required only if accessing via a manager account",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": {
+      "python": ">=3.10"
+    }
+  },
+  "keywords": ["google ads", "advertising", "ppc", "campaigns", "gaql"],
+  "license": "Apache-2.0"
+}
