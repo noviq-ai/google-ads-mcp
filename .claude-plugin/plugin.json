@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "Google Ads MCP server - manage campaigns, ad groups, keywords, and reports",
   "author": {
-    "name": "noviq-ai"
+    "name": "noviq-ai",
+    "url": "https://github.com/noviq-ai"
   },
+  "repository": "https://github.com/noviq-ai/google-ads-mcp",
   "license": "Apache-2.0",
   "keywords": ["google-ads", "mcp", "marketing"]
 }
