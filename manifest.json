@@ -2,7 +2,7 @@
   "manifest_version": "0.4",
   "name": "google-ads-mcp",
   "display_name": "Google Ads MCP Server",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "MCP server for Google Ads - search ad account data and list accessible customers",
   "long_description": "Connect Claude to your Google Ads accounts. Run GAQL queries to search campaigns, ad groups, keywords, and performance data. List accessible customer accounts.",
   "author": {
