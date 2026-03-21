@@ -38,3 +38,7 @@ coverage.xml
 
 # MCPB build artifacts
 *.mcpb
+
+# ローカル手順書
+TOOLS.md
+SETUP_LOCAL.md

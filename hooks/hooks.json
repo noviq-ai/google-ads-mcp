@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -z \"$GOOGLE_APPLICATION_CREDENTIALS\" ]; then echo '[google-ads-mcp] Warning: GOOGLE_APPLICATION_CREDENTIALS is not set. Run: export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json' >&2; elif [ ! -f \"$GOOGLE_APPLICATION_CREDENTIALS\" ]; then echo \"[google-ads-mcp] Warning: Service account file not found at $GOOGLE_APPLICATION_CREDENTIALS\" >&2; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Google Ads MCP context: Use list_accessible_customers to get customer IDs, then search tool with GAQL queries. cost_micros / 1000000 = currency amount. Read-only API (no write operations).'"
+          }
+        ]
+      }
+    ]
+  }
+}
