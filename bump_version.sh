@@ -15,10 +15,13 @@ sed -i '' "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" manifest.json
 # pyproject.toml
 sed -i '' "s/^version = \".*\"/version = \"$VERSION\"/" pyproject.toml
 
+# .claude-plugin/plugin.json
+sed -i '' "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" .claude-plugin/plugin.json
+
 echo "Updated to $VERSION"
 git diff --stat
 
-git add manifest.json pyproject.toml
+git add manifest.json pyproject.toml .claude-plugin/plugin.json
 git commit -m "バージョンを $VERSION に更新"
 git tag "v$VERSION"
 git push && git push origin "v$VERSION"
