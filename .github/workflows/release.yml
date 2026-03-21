@@ -18,7 +18,7 @@ jobs:
         run: npm install -g @anthropic-ai/mcpb
 
       - name: Build MCPB package
-        run: mcpb pack
+        run: mcpb pack . $(node -e "console.log(require('./manifest.json').name)")-${GITHUB_REF_NAME}.mcpb
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
