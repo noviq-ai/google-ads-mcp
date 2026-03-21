@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "google-ads-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/noviq-ai/google-ads-mcp.git",
+        "python",
+        "-m",
+        "ads_mcp.server"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "GOOGLE_ADS_DEVELOPER_TOKEN": "${GOOGLE_ADS_DEVELOPER_TOKEN}",
+        "GOOGLE_ADS_LOGIN_CUSTOMER_ID": "${GOOGLE_ADS_LOGIN_CUSTOMER_ID}"
+      }
+    }
+  }
+}
