@@ -1,13 +1,11 @@
 {
   "mcpServers": {
     "google-ads-mcp": {
-      "command": "uvx",
+      "command": "/bin/zsh",
       "args": [
-        "--from",
-        "git+https://github.com/noviq-ai/google-ads-mcp.git",
-        "python",
-        "-m",
-        "ads_mcp.server"
+        "-l",
+        "-c",
+        "uvx --from git+https://github.com/noviq-ai/google-ads-mcp.git python -m ads_mcp.server"
       ]
     }
   }
